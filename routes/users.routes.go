@@ -55,6 +55,7 @@ func DeleteUserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// db.DB.Unscoped().Delete(&user) -> lo remueve realmente.
 	db.DB.Delete(&user)
 	w.WriteHeader(http.StatusOK)
 
